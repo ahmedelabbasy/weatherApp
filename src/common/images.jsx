@@ -1,7 +1,4 @@
-const bg = require('../assets/images/bg.png');
-const logo = require('../assets/images/logo.png');
-
-export default {
-    bg,
-    logo
-}
+export const IMAGES = {
+    bg : require('../assets/images/bg.png'),
+    logo : require('../assets/images/logo.png')
+  };

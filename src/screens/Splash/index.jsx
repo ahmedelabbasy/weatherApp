@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import {
   Image,
-  ImageBackground,
-  View,
 } from 'react-native';
-import images from '../../common/images';
+import {IMAGES} from '../../common';
+import AppTemplate from '../../components/templates/AppTemplate';
+
 import style from './styles';
 
 const Splash = ({ navigation }) => {
@@ -12,25 +12,17 @@ const Splash = ({ navigation }) => {
 
     useEffect(() => {
         setTimeout(() => {
-            navigation.navigate(`auth`, { screen: "home" })
+            navigation.navigate(`auth`)
           }, 3000);
     }, [])
   
     return (
-      <View
-        style={style.container}
-      >
-        <ImageBackground
-          source={images.bg}
-          resizeMode={"cover"}
-          style={style.backgroundImage}
-        >
+      <AppTemplate>
           <Image
-            source={images.logo}
+            source={IMAGES.logo}
             style={style.img}
           />
-        </ImageBackground>
-      </View>
+     </AppTemplate>
     )
   }
   export default Splash;

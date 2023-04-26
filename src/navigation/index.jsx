@@ -1,24 +1,25 @@
-import React from 'react';
+import * as React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import AuthNavigator from './authNavigator';
+import authNavigator from './authNavigator';
 import Splash from '../screens/Splash';
 
 const Stack = createNativeStackNavigator();
-
-const RootNavigator = () => {
+  
+const RootNav = () => {
 
     return (
         <NavigationContainer>
             <Stack.Navigator
                 screenOptions={{
-                    headerShown: false
+                    headerShown: false,
+                    gestureEnabled: false,
                 }}>
-                <Stack.Screen name='splash' component={Splash} />
-                <Stack.Screen name="auth" component={AuthNavigator} />
+                <Stack.Screen name='Splash' component={Splash} />
+                <Stack.Screen name="auth" component={authNavigator} />
             </Stack.Navigator>
         </NavigationContainer>
     )
-}
 
-export default RootNavigator;
+}
+export default RootNav;
